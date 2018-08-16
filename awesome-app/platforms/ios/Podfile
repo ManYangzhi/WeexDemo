@@ -1,0 +1,25 @@
+source 'git@github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+#inhibit_all_warnings!
+
+def common
+#    pod 'WeexSDK', '~> 0.18.0'
+#    pod 'WeexSDK'
+    pod 'WeexSDK',:git=>'git@code.aliyun.com:hkr-app/HKWeexSDK.git',:tag => '0.18.0.2'
+    pod 'WeexPluginLoader'
+    pod 'SDWebImage', '3.7.5'
+    pod 'SocketRocket', '0.4.2'
+    pod 'WXDevtool', '0.15.3', :configurations => ['Debug']
+    pod 'Masonry','1.0.2'
+    pod 'ReactiveCocoa', '~> 2.5'
+    pod 'MJExtension', '3.0.13'
+    pod 'IQKeyboardManager', :git=>'https://github.com/hackiftekhar/IQKeyboardManager.git',:tag => 'v5.0.7'
+end
+
+target 'WeexDemo' do
+    common
+end
+
+target 'WeexUITestDemo' do
+    common
+end
